@@ -1,0 +1,157 @@
+$container__form-xs: 375;
+$container__form-sm: 576;
+$container__form-md: 768;
+$container__form-lg: 992;
+$container__form-xl: 1200;
+$container__form-xxl: 1440;
+
+$font-size: 16px;
+
+
+$colors : (Cyan: hsl(179, 62%, 43%),Bright Yellow: hsl(71, 73%, 54%), Light Gray: hsl(204, 43%, 93%), Grayish Blue: hsl(218, 22%, 67%), Whitish: hsl(184, 9%, 96%));
+$fallback-colors: (Cyan Yellow LightGray LightSteelBlue Snow);
+
+@mixin bg-color($color,$fallback-color){
+    background-color: $fallback-color;
+    background-color: $color;
+}
+
+@mixin font-color($color,$fallback-color){
+    color: $fallback-color;
+	color: $color;
+}
+@mixin width($grid-size){
+    width: $grid-size * 1px;
+}
+
+@mixin border-radius($radius){
+    border-radius: $radius;
+}
+@mixin margin($args...){
+    margin: $args;
+}
+@mixin padding($args...){
+    padding: $args;
+}
+@mixin font-weight($weight){
+    font-weight: $weight;
+}
+@mixin font-size($size){
+    font-size: $size * 1px;
+}
+
+*,::before,::after{
+	box-sizing:border-box;
+}
+html, body{
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+	font: $font-size 'Karla', sans-serif;
+	@include font-weight(400);
+	@include bg-color(map-get($colors, Light Gray), nth($fallback-colors, 3));
+	@media screen and (min-width: $container__form-xxl * 1px){ 
+	   @include font-weight(700);
+	}
+	
+}
+
+h1{
+   @include font-size(24);
+   @include font-weight(400);
+   @include font-color(map-get($colors, Cyan), nth($fallback-colors, 1));
+}
+h3{
+   @include font-size(18);
+   @include font-color(map-get($colors, Whitish), nth($fallback-colors, 5));
+}
+
+main{
+	width: 100%;
+    
+	.container{
+	    @include margin(100px auto);
+	    @include width($container__form-xs);
+		@include bg-color(map-get($colors, Whitish), nth($fallback-colors, 5));
+		overflow: hidden;
+		@include border-radius(15px);
+	    
+		div:nth-of-type(1){
+		    @include bg-color(map-get($colors, Whitish), nth($fallback-colors, 5));
+			@include padding(10px);
+			strong{
+			   @include font-color(map-get($colors, Bright Yellow), nth($fallback-colors, 2));
+			}
+			p{
+			   @include font-color(map-get($colors, Grayish Blue), nth($fallback-colors, 4));
+			   @include margin(8px 0 0 0);
+			}
+		}
+		
+		div:nth-of-type(2){
+		    div:nth-of-type(1){
+		        @include bg-color(map-get($colors,Cyan), nth($fallback-colors, 1));
+			    @include padding(18px);
+			    strong{
+			       @include font-color(map-get($colors, Whitish), nth($fallback-colors, 5));
+				   @include font-size(24);
+			    }
+				p{
+			       @include font-color(darken(map-get($colors, Light Gray),12), nth($fallback-colors, 3));
+				   @include margin(8px 0 22px 0);
+			    }
+				span{
+				   @include font-color(lighten(map-get($colors, Grayish Blue),12), nth($fallback-colors, 3));
+				}
+			}
+		    div:nth-of-type(2){
+		       @include bg-color(lighten(map-get($colors, Cyan),15), nth($fallback-colors, 1));
+			   @include padding(18px);
+		    }
+		}
+
+		ul{
+	        li {
+			  @include font-color(lighten(map-get($colors, Grayish Blue),22), nth($fallback-colors, 3));
+		    }
+		}
+		button{
+		    @include bg-color(map-get($colors, Bright Yellow), nth($fallback-colors, 2));
+			@include width(150);
+		}
+	}
+	
+    @media screen and (min-width: $container__form-sm * 1px){ 
+	    .container{
+		   @include width($container__form-sm);
+		}
+    }
+  
+	@media screen and (min-width: $container__form-md * 1px){ 
+	    .container{
+		   @include width($container__form-md);
+		}
+    }
+	
+	@media screen and (min-width: $container__form-lg * 1px){ 
+	    .container{
+		   @include width($container__form-lg);
+		}
+    }
+	@media screen and (min-width: $container__form-xl * 1px){ 
+	    .container{
+		   @include width($container__form-xl);
+		}
+    }
+	@media screen and (min-width: $container__form-xxl * 1px){ 
+	    .container{
+		   @include width($container__form-xxl);
+		}
+    }
+	
+}
+
+footer{
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+}

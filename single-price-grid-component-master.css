@@ -1,0 +1,95 @@
+*, ::before, ::after {
+  box-sizing: border-box; }
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  font: 16px "Karla", sans-serif;
+  font-weight: 400;
+  background-color: LightGray;
+  background-color: #e5eff5; }
+  @media screen and (min-width: 1440px) {
+    html, body {
+      font-weight: 700; } }
+
+h1 {
+  font-size: 24px;
+  font-weight: 400;
+  color: Cyan;
+  color: #2ab2af; }
+
+h3 {
+  font-size: 18px;
+  color: Snow;
+  color: #f4f6f6; }
+
+main {
+  width: 100%; }
+  main .container {
+    margin: 100px auto;
+    width: 375px;
+    background-color: Snow;
+    background-color: #f4f6f6;
+    overflow: hidden;
+    border-radius: 15px; }
+    main .container div:nth-of-type(1) {
+      background-color: Snow;
+      background-color: #f4f6f6;
+      padding: 10px; }
+      main .container div:nth-of-type(1) strong {
+        color: Yellow;
+        color: #c0df34; }
+      main .container div:nth-of-type(1) p {
+        color: LightSteelBlue;
+        color: #98a6bd;
+        margin: 8px 0 0 0; }
+    main .container div:nth-of-type(2) div:nth-of-type(1) {
+      background-color: Cyan;
+      background-color: #2ab2af;
+      padding: 18px; }
+      main .container div:nth-of-type(2) div:nth-of-type(1) strong {
+        color: Snow;
+        color: #f4f6f6;
+        font-size: 24px; }
+      main .container div:nth-of-type(2) div:nth-of-type(1) p {
+        color: LightGray;
+        color: #bad3e3;
+        margin: 8px 0 22px 0; }
+      main .container div:nth-of-type(2) div:nth-of-type(1) span {
+        color: LightGray;
+        color: #bec6d5; }
+    main .container div:nth-of-type(2) div:nth-of-type(2) {
+      background-color: Cyan;
+      background-color: #51d6d4;
+      padding: 18px; }
+    main .container ul li {
+      color: LightGray;
+      color: #dde1e9; }
+    main .container button {
+      background-color: Yellow;
+      background-color: #c0df34;
+      width: 150px; }
+  @media screen and (min-width: 576px) {
+    main .container {
+      width: 576px; } }
+  @media screen and (min-width: 768px) {
+    main .container {
+      width: 768px; } }
+  @media screen and (min-width: 992px) {
+    main .container {
+      width: 992px; } }
+  @media screen and (min-width: 1200px) {
+    main .container {
+      width: 1200px; } }
+  @media screen and (min-width: 1440px) {
+    main .container {
+      width: 1440px; } }
+
+footer .attribution {
+  font-size: 11px;
+  text-align: center; }
+footer .attribution a {
+  color: #3e52a3; }
+
+/*# sourceMappingURL=single-price-grid-component-master.css.map */
